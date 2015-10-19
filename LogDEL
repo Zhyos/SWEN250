@@ -1,0 +1,29 @@
+#Aaron Starr
+#Class Log
+#Desc - delete something to log
+
+class Log
+
+  #deletes a food in the log
+  #I: log, index
+  #O: array and/or print
+  def self.deletelogitem(log, i)
+    newlog = log.delete_at(i)
+    return newlog
+
+  end
+
+  #override file with logarray
+  #I: log
+  #O: void - file override
+  def self.save(log)
+
+    text = File.open("DietLog.txt", "w")
+
+    for i in 0..(log.length - 1)
+      text.write(log[i].join(",") + "\n") #Array to String
+    end
+
+    text.close
+  end
+end
