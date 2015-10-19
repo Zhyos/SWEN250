@@ -1,0 +1,50 @@
+#Aaron Starr
+#Class LogItem
+#Desc - Add something to log methods
+
+require 'date'
+
+class LogItem
+
+  #adds a new food to the log
+  #I: hash, string, object, array
+  #O: array and/or print
+  def self.log1(hash, name, date, log)
+
+    yes = false
+    for i in hash["0"]
+      if i[0] == name #does food already exist?
+        yes = true
+      end
+    end
+
+    if yes
+      log.push([date,name])
+      return log
+    else
+      print("Food not in current database log <name>")
+      return log
+    end
+  end
+
+  #adds a new food and date to the log
+  #I: hash, string, object, array
+  #O: array and/or print
+  def self.log2(hash, name, date, log)
+
+    yes2 = false
+    for i in hash["0"]
+      if i[0] == name #does food already exist?
+        yes2 = true
+      end
+    end
+
+    if yes2
+      log.push([date,name])
+      return log
+    else
+      print("Food not in current database, log <name,date>")
+      return log
+    end
+  end
+end
